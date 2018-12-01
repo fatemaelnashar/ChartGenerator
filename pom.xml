@@ -17,7 +17,6 @@
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-io</artifactId>
@@ -55,13 +54,19 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.8.3</version>
                 <configuration>
+                    <vendor>FatemaElnashar</vendor>
                     <mainClass>com.exercise.App</mainClass>
-                    <allPermissions>true</allPermissions>
+                    <deployDir>${project.basedir}\src\main\deploy</deployDir>
+                    <verbose>true</verbose>
+                    <appName>ChartGenerator</appName>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
-
-
 </project>
+
+
+
+
+
