@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<AnchorPane fx:id="pane" prefHeight="745.0" prefWidth="1062.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.ChartController">
+    <Pane fx:id="selectFile" visible="true">
+        <VBox>
+            <Label styleClass="headerLabel" text="Select CSV file or enter file path to generate a chart" textAlignment="CENTER">
+                <VBox.margin>
+                    <Insets>
+                        <top>40</top>
+                        <left>40</left>
+                    </Insets>
+                </VBox.margin>
+            </Label>
+
+            <HBox>
+                <VBox.margin>
+                    <Insets>
+                        <top>40</top>
+                        <left>60</left>
+                    </Insets>
+                </VBox.margin>
+                <TextField fx:id="filePathField" prefHeight="39.0" prefWidth="286.0" />
+                <Button fx:id="btnBrowse" onAction="#browse" text="Browse">
+                    <HBox.margin>
+                        <Insets>
+                            <top>5</top>
+                            <left>30</left>
+                        </Insets>
+                    </HBox.margin>
+                </Button>
+                <Button styleClass="select" fx:id="btnSelect" onAction="#Select" text="Select" >
+                    <HBox.margin>
+                        <Insets>
+                            <top>5</top>
+                            <left>30</left>
+                        </Insets>
+                    </HBox.margin>
+                </Button>
+            </HBox>
+
+            <Label styleClass="alertLabel" fx:id="alert" visible="false">
+                <VBox.margin>
+                    <Insets>
+                        <top>10</top>
+                        <left>60</left>
+                    </Insets>
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </Pane>
+
+    <GridPane fx:id="chartGrid">
+        <BarChart fx:id="bc" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <xAxis>
+                <CategoryAxis fx:id="xAxis" side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" />
+            </yAxis>
+        </BarChart>
+
+        <Hyperlink fx:id="back" onAction="#back" text="Choose another file" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets>
+                    <top>20</top>
+                    <left>20</left>
+                </Insets>
+            </GridPane.margin>
+        </Hyperlink>
+    </GridPane>
+</AnchorPane>
